@@ -8,6 +8,13 @@ module.exports = {
     ERROR_CLIENT_CODE: 400,
     ERROR_SERVER_CODE: 500,
 
+    /***** METHODS for request *****/
+    REQUEST_METHOD_GET: 'GET',
+
+    /***** TABLES for request *****/
+    POSTS_TABLE: '/posts',
+    PHOTOS_TABLE: '/photos',
+
     /*****  ROUTES for request  *****/    
     GET_POSTS: '/',
     GET_PHOTOS: '/',
@@ -17,5 +24,5 @@ module.exports = {
     SUCCESS_MESSAGE: "INFORMACION ENCONTRADA",
     // failed
     ERROR_SERVER: "ERROR EN EL SERVIDOR",
-    ERROR_DATA_NOT_FOUND_MESSAGE: "NO SE ENCONTRO LA INFORMACION SOLICITADA",
+    ERROR_DATA_NOT_FOUND_MESSAGE: "NO SE ENCONTRO LA INFORMACION SOLICITADA"
 }

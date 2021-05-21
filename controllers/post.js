@@ -11,11 +11,12 @@ const {
 exports.getPosts = async(req, res) => {
     try {
         const posts = await getPosts();
+                
         if(posts){
             res.status(SUCCESS_CODE).send({
                 status: SUCCESS_CODE,
                 message: SUCCESS_MESSAGE,
-                posts: posts.data
+                posts: posts
             });
         }else{
             res.status(ERROR_CLIENT_CODE).send({

@@ -11,11 +11,12 @@ const {
 exports.getPhotos = async(req, res) => {
     try {
         const photos = await getPhotos();
+        
         if(photos){
             res.status(SUCCESS_CODE).send({
                 status: SUCCESS_CODE,
                 message: SUCCESS_MESSAGE,
-                photos: photos.data
+                photos: photos
             });
         }else{
             res.status(ERROR_CLIENT_CODE).send({
