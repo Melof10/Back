@@ -8,9 +8,9 @@ const {
     ERROR_DATA_NOT_FOUND_MESSAGE 
 } = require('../constants');
 
-exports.getPhotos = async(req, res) => {
+exports.getPhotos = async(req, res) => {                    
     try {
-        const photos = await getPhotos();
+        const photos = await getPhotos(req.params);
         
         if(photos){
             res.status(SUCCESS_CODE).send({

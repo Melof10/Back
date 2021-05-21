@@ -16,8 +16,10 @@ module.exports = {
     PHOTOS_TABLE: '/photos',
 
     /*****  ROUTES for request  *****/    
-    GET_POSTS: '/',
-    GET_PHOTOS: '/',
+    GET_POSTS: '/',    
+    GET_PHOTOS: '/:page/:limit',
+    // api jsonplaceholder
+    GET_PHOTOS_API: '/',
 
     /***** MESSAGES *****/    
     // success

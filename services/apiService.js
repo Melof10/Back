@@ -8,14 +8,18 @@ exports.apiService = async({
     ID,
     METHOD,
     data,
+    page,
+    limit
 }) => {
     const AUTH_HEADER = {
         Authorization: `Bearer ${!keyValue ? "" : localStorage.getItem(keyValue)}`,
     };
 
-    let url = `${API_URL}/${BASE}`;
+    let url = `${API_URL}/${BASE}`;    
     if (TABLE) url = url + `/${TABLE}`;
     if (ID) url = url + `/${ID}`;
+    if (page) url = url + `?_page=${page}`;
+    if (limit) url = url + `&_limit=${limit}`;    
 
     const options = {
         method: METHOD,
