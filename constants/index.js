@@ -18,6 +18,7 @@ module.exports = {
     /*****  ROUTES for request  *****/    
     GET_POSTS: '/',    
     GET_PHOTOS: '/:page/:limit',
+    POST_USER: '/',
     // api jsonplaceholder
     GET_PHOTOS_API: '/',
 
