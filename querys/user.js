@@ -7,3 +7,7 @@ exports.findByEmail = async(email) => {
         }
     });
 }
+
+exports.findByPk = async(id) => {
+    return await User.findByPk(id);
+}
