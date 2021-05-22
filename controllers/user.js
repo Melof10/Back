@@ -1,4 +1,5 @@
 const { findByEmail } = require('../querys/user');
+const { createAccessToken, refreshAccessToken } = require('../services/jwt');
 const { 
     ERROR_SERVER_CODE, 
     ERROR_SERVER, 
@@ -10,13 +11,14 @@ const {
 
 exports.singIn = async(req, res) => {    
     try {
-        const user = await findByEmail(req.body.email);
+        const user = await findByEmail(req.body);
 
-        if(user){
+        if(user){            
             res.status(SUCCESS_CODE).send({
                 status: SUCCESS_CODE,
                 message: SUCCESS_MESSAGE,
-                user: user
+                accessToken: createAccessToken(user),
+                refreshToken: refreshAccessToken(user)
             });
         }else{
             res.status(ERROR_CLIENT_CODE).send({

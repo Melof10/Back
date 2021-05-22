@@ -19,6 +19,7 @@ module.exports = {
     GET_POSTS: '/',    
     GET_PHOTOS: '/:page/:limit',
     POST_USER: '/',
+    AUTH_REFRESH_ACCESS_TOKEN: '/refresh-access-token',
     // api jsonplaceholder
     GET_PHOTOS_API: '/',
 
@@ -27,5 +28,6 @@ module.exports = {
     SUCCESS_MESSAGE: "INFORMACION ENCONTRADA",
     // failed
     ERROR_SERVER: "ERROR EN EL SERVIDOR",
-    ERROR_DATA_NOT_FOUND_MESSAGE: "NO SE ENCONTRO LA INFORMACION SOLICITADA"
+    ERROR_DATA_NOT_FOUND_MESSAGE: "NO SE ENCONTRO LA INFORMACION SOLICITADA",
+    ERROR_REFRESH_TOKEN: 'REFRESH TOKEN EXPIRED',
 }

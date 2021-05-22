@@ -1,4 +1,4 @@
-const jwt = require('../services/jwt');
+const { createAccessToken, decodedToken } = require('../services/jwt');
 const moment = require('moment');
 const { findByPk } = require('../querys/user');
 const { 
@@ -7,7 +7,8 @@ const {
     ERROR_CLIENT_CODE, 
     ERROR_DATA_NOT_FOUND_MESSAGE, 
     ERROR_SERVER_CODE, 
-    ERROR_SERVER 
+    ERROR_SERVER,
+    ERROR_REFRESH_TOKEN 
 } = require('../constants');
 
 willExpireToken = (token) => {
@@ -26,17 +27,20 @@ exports.refreshAccessToken = async(req, res) => {
     const isTokenExpired = willExpireToken(refreshToken);
 
     if(isTokenExpired){
-        res.status(404).send({
-            message: 'refreshToken ha expirado'
+        res.status(ERROR_CLIENT_CODE).send({
+            message: ERROR_REFRESH_TOKEN
         })
     }else{
         try {
-            const { id } = jwt.decodedToken(refreshToken);        
+            const { id } = decodedToken(refreshToken);        
             const user = await findByPk(id);
+            
             if(user){
                 res.status(SUCCESS_CODE).send({
                     status: SUCCESS_CODE,
                     message: SUCCESS_MESSAGE,
+                    accessToken: createAccessToken(user),
+                    refreshToken: refreshToken,
                     user: user
                 });
             }else{

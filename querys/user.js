@@ -1,9 +1,10 @@
 const { User } = require('../database');
 
-exports.findByEmail = async(email) => {
+exports.findByEmail = async(body) => {
     return await User.findOne({
         where: {
-            email: email
+            email: body.email,
+            password: body.password
         }
     });
 }
