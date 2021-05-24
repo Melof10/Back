@@ -31,6 +31,8 @@ module.exports = {
     /*****  ROUTES for test  *****/
     GET_POSTS_TEST: '/posts',
     GET_POST_TEST: '/posts/1',
+    GET_PHOTOS_TEST: '/photos/1/10',
+    GET_PHOTO_TEST: '/photos/1',
 
     /***** MESSAGES *****/    
     // success
