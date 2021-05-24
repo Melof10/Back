@@ -23,6 +23,8 @@ module.exports = {
     POST_USER: '/',
     AUTH_REFRESH_ACCESS_TOKEN: '/refresh-access-token',
     // api jsonplaceholder    
+    GET_POSTS_API: '/',
+    GET_POST_API: '/',
     GET_PHOTOS_API: '/',
     GET_PHOTO_API: '/',
 
