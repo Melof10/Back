@@ -8,3 +8,12 @@ exports.getPosts = async() => {
         METHOD: REQUEST_METHOD_GET
     });
 }
+
+exports.getPost = async(id) => {
+    return await apiService({
+        API_URL: API_URL_POSTS,
+        BASE: GET_POSTS,
+        METHOD: REQUEST_METHOD_GET,
+        data: id
+    })
+}
