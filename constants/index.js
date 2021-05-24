@@ -16,7 +16,8 @@ module.exports = {
     PHOTOS_TABLE: '/photos',
 
     /*****  ROUTES for request  *****/    
-    GET_POSTS: '/',    
+    GET_POSTS: '/',     
+    GET_POST: '/:id',
     GET_PHOTOS: '/:page/:limit',
     POST_USER: '/',
     AUTH_REFRESH_ACCESS_TOKEN: '/refresh-access-token',

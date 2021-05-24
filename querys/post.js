@@ -9,11 +9,11 @@ exports.getPosts = async() => {
     });
 }
 
-exports.getPost = async(id) => {
+exports.getPost = async(id) => {    
     return await apiService({
         API_URL: API_URL_POSTS,
         BASE: GET_POSTS,
         METHOD: REQUEST_METHOD_GET,
-        data: id
-    })
+        ID: id
+    })        
 }
