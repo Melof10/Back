@@ -28,6 +28,10 @@ module.exports = {
     GET_PHOTOS_API: '/',
     GET_PHOTO_API: '/',
 
+    /*****  ROUTES for test  *****/
+    GET_POSTS_TEST: '/posts',
+    GET_POST_TEST: '/posts/1',
+
     /***** MESSAGES *****/    
     // success
     SUCCESS_MESSAGE: "INFORMACION ENCONTRADA",
