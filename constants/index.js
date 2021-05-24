@@ -33,6 +33,7 @@ module.exports = {
     GET_POST_TEST: '/posts/1',
     GET_PHOTOS_TEST: '/photos/1/10',
     GET_PHOTO_TEST: '/photos/1',
+    POST_USER_TEST: '/users',
 
     /***** MESSAGES *****/    
     // success
