@@ -23,6 +23,7 @@ module.exports = {
     AUTH_REFRESH_ACCESS_TOKEN: '/refresh-access-token',
     // api jsonplaceholder
     GET_PHOTOS_API: '/',
+    GET_PHOTO_API: '/',
 
     /***** MESSAGES *****/    
     // success
