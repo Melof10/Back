@@ -19,9 +19,10 @@ module.exports = {
     GET_POSTS: '/',     
     GET_POST: '/:id',
     GET_PHOTOS: '/:page/:limit',
+    GET_PHOTO: '/:id',
     POST_USER: '/',
     AUTH_REFRESH_ACCESS_TOKEN: '/refresh-access-token',
-    // api jsonplaceholder
+    // api jsonplaceholder    
     GET_PHOTOS_API: '/',
     GET_PHOTO_API: '/',
 
