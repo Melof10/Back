@@ -5,7 +5,8 @@ const {
     ERROR_SERVER_CODE,
     SUCCESS_MESSAGE,
     ERROR_SERVER,
-    ERROR_DATA_NOT_FOUND_MESSAGE 
+    ERROR_DATA_NOT_FOUND_MESSAGE,                       
+    ERROR_REFRESH_TOKEN 
 } = require('../constants');
 
 exports.responseSuccess = (res, data) => {
@@ -32,6 +33,13 @@ exports.responseRefreshAccessToken = (res, data, refreshToken) => {
         accessToken: createAccessToken(data),
         refreshToken: refreshToken,
         user: data                     
+    });
+}
+
+exports.responseErrorRefreshToken = (res) => {
+    return res.status(ERROR_CLIENT_CODE).send({
+        status: ERROR_CLIENT_CODE,
+        message: ERROR_REFRESH_TOKEN
     });
 }
 
