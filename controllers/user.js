@@ -1,36 +1,15 @@
 const { findByEmail } = require('../querys/user');
-const { createAccessToken, refreshAccessToken } = require('../services/jwt');
 const { 
-    ERROR_SERVER_CODE, 
-    ERROR_SERVER, 
-    SUCCESS_CODE, 
-    SUCCESS_MESSAGE, 
-    ERROR_CLIENT_CODE, 
-    ERROR_DATA_NOT_FOUND_MESSAGE 
-} = require('../constants');
+    responseSignIn, 
+    responseErrorClient, 
+    responseErrorServer 
+} = require('../utils/responseRequest');
 
 exports.singIn = async(req, res) => {    
     try {
         const user = await findByEmail(req.body);
-
-        if(user){            
-            res.status(SUCCESS_CODE).send({
-                status: SUCCESS_CODE,
-                message: SUCCESS_MESSAGE,
-                accessToken: createAccessToken(user),
-                refreshToken: refreshAccessToken(user)
-            });
-        }else{
-            res.status(ERROR_CLIENT_CODE).send({
-                status: ERROR_CLIENT_CODE,
-                message: ERROR_DATA_NOT_FOUND_MESSAGE
-            })
-        }
+        user ? responseSignIn(res, user) : responseErrorClient(res);        
     } catch (error) {
-        res.status().send({
-            status: ERROR_SERVER_CODE,
-            message: ERROR_SERVER,
-            error: error
-        })
+        responseErrorServer(res, error);
     }
 }
